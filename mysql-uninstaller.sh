@@ -46,6 +46,9 @@ apt-get install -y sudo
 
 echo -e "\n"
 echo -e "${LIGHT_RED} Start of MySQL removal! ${COLOR_NULL}"
+sudo service mysql stop
+sudo service mariadb stop
+sudo apt-get --purge remove "mysql*"
 sudo apt-get -y remove mariadb-server
 sudo apt-get -y purge mariadb-server
 sudo apt-get -y remove mariadb-client
