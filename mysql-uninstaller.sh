@@ -75,4 +75,13 @@ sudo apt-get -y autoremove
 
 echo -e "\n"
 echo -e "${LIGHT_GREEN} Thanks for using this script. MySQL was successfully removed! ${COLOR_NULL}"
-echo -e "${YELLOW} It is recommended to restart the VPS/Dedicated. (use command ${RED}reboot${YELLOW}) ${COLOR_NULL}"
+while true
+do
+    echo -e "${YELLOW} It is recommended to restart the VPS/Dedicated. (use command ${RED}reboot${YELLOW}), do you want to restart now? (Y/N) ${COLOR_NULL}"
+    read optionreboot
+    case "$optionreboot" in
+      n|N|no|No|NO) exit;;
+      y|Y|yes|Yes|YES) reboot;;
+      *) echo -e "${ERROR} ${LIGHT_RED}The argument you entered is incorrect! ${COLOR_NULL}";;
+    esac
+done
