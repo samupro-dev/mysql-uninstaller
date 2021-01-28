@@ -9,6 +9,7 @@ COLOR_NULL="\e[0m"
 LIGHT_BLUE="\e[1;34m"
 PURPLE="\e[0;35m"
 
+clear
 echo -e "\n"
 echo -e "${PURPLE}  ██████  ▄▄▄       ███▄ ▄███▓ █    ██  ██▓███   ██▀███   ▒█████  
 ▒██    ▒ ▒████▄    ▓██▒▀█▀ ██▒ ██  ▓██▒▓██░  ██▒▓██ ▒ ██▒▒██▒  ██▒
@@ -18,7 +19,8 @@ echo -e "${PURPLE}  ██████  ▄▄▄       ███▄ ▄██�
 ▒ ▒▓▒ ▒ ░ ▒▒   ▓▒█░░ ▒░   ░  ░░▒▓▒ ▒ ▒ ▒▓▒░ ░  ░░ ▒▓ ░▒▓░░ ▒░▒░▒░ 
 ░ ░▒  ░ ░  ▒   ▒▒ ░░  ░      ░░░▒░ ░ ░ ░▒ ░       ░▒ ░ ▒░  ░ ▒ ▒░ 
 ░  ░  ░    ░   ▒   ░      ░    ░░░ ░ ░ ░░         ░░   ░ ░ ░ ░ ▒  
-      ░        ░  ░       ░      ░                 ░         ░ ░  ${COLOR_NULL}"
+      ░        ░  ░       ░      ░                 ░         ░ ░  
+                https://github.com/samupro-dev${COLOR_NULL}"
 echo -e "\n"
 echo -e "${LIGHT_BLUE} This script will completely remove MySQL from this VPS/Dedicated. ${COLOR_NULL}"
 echo -e ""
@@ -50,10 +52,10 @@ echo -e "\n"
 echo -e "${LIGHT_RED} Start of MySQL removal! ${COLOR_NULL}"
 sudo service mysql stop
 sudo service mariadb stop
-sudo apt-get remove "mysql*"
-sudo apt-get purge "mysql*"
-sudo apt-get remove "mariadb*"
-sudo apt-get purge "mariadb*"
+sudo apt-get -y remove "mysql*"
+sudo apt-get -y purge "mysql*"
+sudo apt-get -y remove "mariadb*"
+sudo apt-get -y purge "mariadb*"
 sudo apt-get -y remove mariadb-server
 sudo apt-get -y purge mariadb-server
 sudo apt-get -y remove mariadb-client
